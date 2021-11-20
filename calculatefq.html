@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="jp">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="Author" content="Jago39">
+	<meta name="Description" content="共振周波数を計算するページ">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+	<script src="js/calculateFq.js"></script>
+	<title>[電気工学実験1]共振回路の共振周波数を計算する</title>
+</head>
+
+<body>
+	<h1>共通項目</h1>
+	<div>
+	<!--実験回路の選択-->
+	<div>
+		<label for="circuit-select">実験回路:</label>
+		<select name="circuit" id="circuit-select">
+			<option value="A">実験回路A</option>
+			<option value="B">実験回路B</option>
+		</select>
+	</div>
+	<!--抵抗R1の値の入力-->
+	<div>
+		<label for="r1Value">抵抗R<sub>1</sub>の値</label>
+		<input id="r1Value" type="number" name="r1Value" step="0.01" min="0">
+		<label for="r1Value">Ω</label>		
+	</div>
+	<!--抵抗RLの値の入力-->
+	<div>
+		<label for="rlValue">抵抗R<sub>L</sub>の値</label>
+		<input id="rlValue" type="number" name="rlValue" step="0.01" min="0">
+		<label for="rlValue">Ω</label>
+	</div>
+	<!--コンデンサ容量の入力-->
+	<div>
+		<label for="cValue">コンデンサCの値:</label>
+		<input id="cValue" type="number" name="cValue" step="0.01" min="0">
+		<label for="cValue"><var>nF</var></label>
+	</div>
+	<!--直列共振回路の場合-->
+	<div>
+		<h1>直列共振回路</h1>
+		<input type="button" value=" 計算" id="seriesCalButton" onclick="calculateSeriesFq()">
+		<!--結果を表にして表示-->
+		<table>
+			<tr>
+				<td>共振周波数f<sub>0</sub></td>
+				<td id="seriesResult"></td>
+			</tr>
+		</table>
+	</div>
+	<!--並列共振回路の場合-->
+	<h1>並列共振回路</h1>
+	<!--可変抵抗の値の入力-->
+	<label for="r2Value">可変抵抗R<sub>2</sub>の値:</label>
+	<input id="r2Value" type="number" name="r2Value" step="0.01" min="0">
+	<label for="r2Value">Ω</label>
+	</div>
+	<div>
+		<input type="button" value=" 計算" id="parallelCalButton" onclick="calculateParallelFq()">
+		<!--結果を表にして表示-->
+		<table>
+			<tr>
+				<td>共振周波数f<sub>0</sub></td>
+				<td id="parallelF0Result"></td>
+			</tr>
+			<tr>
+				<td>共振周波数f<sub>min</sub></td>
+				<td id="parallelFminResult"></td>
+			</tr>
+		</table>
+	</div>
+
+</body>
+
+</html>
