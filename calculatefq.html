@@ -7,14 +7,18 @@
 	<meta name="Description" content="共振周波数を計算するページ">
 	<!--レスポンシブ化の準備-->
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=1" />
+	<!--MathMLに対応していないブラウザ向け-->
+	<script src="https://fred-wang.github.io/mathml.css/mspace.js"></script>
 	<!--CSSファイルの読み込み-->
+	<link rel="stylesheet" type="text/css" href="css/pc.css">
 	<link rel="stylesheet" type="text/css" href="css/mobile.css">
+	<link rel="stylesheet" type="text/css" href="css/basic.css">
 	<script src="js/calculateFq.js"></script>
 	<title>[電気工学実験1]共振回路の共振周波数を計算する</title>
 </head>
 
 <body>
-	<h1>[電気工学実験1]共振周波数の計算機</h1>
+	<h1>[電気工学実験1]<br class="br-display">共振周波数の計算機</h1>
 	<h2>共通項目</h2>
 	<!--実験回路の選択-->
 	<div>
@@ -26,21 +30,44 @@
 	</div>
 	<!--抵抗R1の値の入力-->
 	<div>
-		<label for="r1Value">抵抗R<sub>1</sub>の値</label>
+		<label for="r1Value">
+			抵抗
+			<math>
+				<msub>
+					<mi>R</mi>
+					<mn>1</mn>
+				</msub>
+				[Ω]
+			</math>
+			の値
+		</label>
 		<input id="r1Value" type="number" name="r1Value" step="0.01" min="0">
-		<label for="r1Value">Ω</label>
 	</div>
 	<!--抵抗RLの値の入力-->
 	<div>
-		<label for="rlValue">抵抗R<sub>L</sub>の値</label>
+		<label for="rlValue">
+			抵抗
+			<math>
+				<msub>
+					<mi>R</mi>
+					<mn>L</mn>
+				</msub>
+				[Ω]
+			</math>
+			の値
+		</label>
 		<input id="rlValue" type="number" name="rlValue" step="0.01" min="0">
-		<label for="rlValue">Ω</label>
 	</div>
 	<!--コンデンサ容量の入力-->
 	<div>
-		<label for="cValue">コンデンサCの値</label>
+		<label for="cValue">
+			コンデンサ
+			<math>
+				C[Ω]
+			</math>
+			の値
+		</label>
 		<input id="cValue" type="number" name="cValue" step="0.01" min="0">
-		<label for="cValue"><var>nF</var></label>
 	</div>
 	<!--直列共振回路の場合-->
 	<h2>直列共振回路</h2>
@@ -61,9 +88,18 @@
 	<!--並列共振回路の場合-->
 	<h2>並列共振回路</h2>
 	<!--可変抵抗の値の入力-->
-	<label for="r2Value">可変抵抗R<sub>2</sub>の値</label>
+	<label for="r2Value">
+		抵抗
+		<math>
+			<msub>
+				<mi>R</mi>
+				<mn>2</mn>
+			</msub>
+			[Ω]
+		</math>
+		の値
+	</label>
 	<input id="r2Value" type="number" name="r2Value" step="0.01" min="0">
-	<label for="r2Value">Ω</label>
 	<!--計算ボタン-->
 	<div class="button">
 		<input type="button" value=" 計算" id="parallelCalButton" onclick="calculateParallelFq()">
