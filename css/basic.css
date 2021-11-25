@@ -1,3 +1,4 @@
+/*出典元:https://saruwakakun.com/html-css/reference/h-design*/
 h1{
     display: flex;
     color: #364e96;
@@ -5,9 +6,13 @@ h1{
     border-top: dashed 2px #364e96;  /*上線*/
     border-bottom: dashed 2px #364e96;  /*上線*/
 }
+
+/*出典元:https://saruwakakun.com/html-css/reference/h-design*/
 h2{
     display: flex;
+    background: linear-gradient(transparent 70%, #a7d6ff 70%);
 }
+
 /*baselineがずれることを修正している*/
 math{
     height: 0;
@@ -15,4 +20,14 @@ math{
     vertical-align: baseline;
     position: relative;
     top: .5ex;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+table td{
+    border: solid 1px black;
+    width: 150px;
+    text-align: center;
 }
