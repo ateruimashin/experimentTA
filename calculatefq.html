@@ -10,8 +10,8 @@
 	<!--MathMLに対応していないブラウザ向け-->
 	<script src="https://fred-wang.github.io/mathml.css/mspace.js"></script>
 	<!--CSSファイルの読み込み-->
-	<link rel="stylesheet" type="text/css" href="css/pc.css">
 	<link rel="stylesheet" type="text/css" href="css/mobile.css">
+	<link rel="stylesheet" type="text/css" href="css/pc.css">
 	<link rel="stylesheet" type="text/css" href="css/basic.css">
 	<script src="js/calculateFq.js"></script>
 	<title>[電気工学実験1]共振回路の共振周波数を計算する</title>
@@ -63,7 +63,7 @@
 		<label for="cValue">
 			コンデンサ
 			<math>
-				C[Ω]
+				C[μF]
 			</math>
 			の値
 		</label>
@@ -80,7 +80,7 @@
 		<table>
 			<tr>
 				<td>共振周波数f<sub>0</sub></td>
-				<td id="seriesResult"></td>
+				<td id="seriesResult">0.00Hz</td>
 			</tr>
 		</table>
 	</div>
@@ -88,18 +88,20 @@
 	<!--並列共振回路の場合-->
 	<h2>並列共振回路</h2>
 	<!--可変抵抗の値の入力-->
-	<label for="r2Value">
-		抵抗
-		<math>
-			<msub>
-				<mi>R</mi>
-				<mn>2</mn>
-			</msub>
-			[Ω]
-		</math>
-		の値
-	</label>
-	<input id="r2Value" type="number" name="r2Value" step="0.01" min="0">
+	<div>
+		<label for="r2Value">
+			抵抗
+			<math>
+				<msub>
+					<mi>R</mi>
+					<mn>2</mn>
+				</msub>
+				[Ω]
+			</math>
+			の値
+		</label>
+		<input id="r2Value" type="number" name="r2Value" step="0.01" min="0">
+	</div>
 	<!--計算ボタン-->
 	<div class="button">
 		<input type="button" value=" 計算" id="parallelCalButton" onclick="calculateParallelFq()">
@@ -109,11 +111,11 @@
 		<table>
 			<tr>
 				<td>共振周波数f<sub>0</sub></td>
-				<td id="parallelF0Result"></td>
+				<td id="parallelF0Result">0.00Hz</td>
 			</tr>
 			<tr>
 				<td>共振周波数f<sub>min</sub></td>
-				<td id="parallelFminResult"></td>
+				<td id="parallelFminResult">0.00Hz</td>
 			</tr>
 		</table>
 	</div>
