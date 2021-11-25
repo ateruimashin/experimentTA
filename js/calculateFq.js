@@ -25,7 +25,7 @@ function calculateSeriesFq() {
   const seriesFq = 1 / (2 * pi * Math.sqrt(l * c));
   //innerTextでHTMLに表示する
   target = document.getElementById("seriesResult");
-  target.innerText = seriesFq.toPrecision(6) + "Hz";
+  target.innerText = seriesFq.toPrecision(7) + "Hz";
 }
 
 function calculateParallelFq() {
@@ -44,6 +44,6 @@ function calculateParallelFq() {
     (2 * pi);
   target1 = document.getElementById("parallelF0Result");
   target2 = document.getElementById("parallelFminResult");
-  target1.innerText = parallelf0.toPrecision(6) + "Hz";
-  target2.innerText = parallelfmin.toPrecision(6) + "Hz";
+  target1.innerText = parallelf0.toPrecision(7) + "Hz";
+  target2.innerText = parallelfmin.toPrecision(7) + "Hz";
 }
