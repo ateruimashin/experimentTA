@@ -1,3 +1,4 @@
+/*モバイルファースト*/
 /*出典元:https://saruwakakun.com/html-css/reference/h-design*/
 h1{
     display: flex;
@@ -13,13 +14,11 @@ h2{
     background: linear-gradient(transparent 70%, #a7d6ff 70%);
 }
 
-/*baselineがずれることを修正している*/
-math{
-    height: 0;
-    line-height: 1.3;           /*調整する数値*/
-    vertical-align: baseline;
-    position: relative;
-    top: .5ex;
+/*labelデザイン*/
+label{
+    display: inline-block;
+    width: 50%;
+    text-align: left;
 }
 
 /*inputにスピンボタンを非表示にする*/
@@ -33,14 +32,42 @@ input[type="number"]::-webkit-inner-spin-button {
 input[type="number"] { 
     -moz-appearance:textfield; 
 } 
+/*ブロック要素*/
+div{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+/*ボタンのデザイン*/
+div.button{
+    display: flex;
+    align-items: center;
+}
+/*入力部分のデザイン*/
+div.value{
+    width: 95%;
+}
+/*式表示部分のデザイン*/
+div.formula{
+    display: flex;
+    align-items: left;
+    margin: 8px;
+}
 
 /*テーブルデザイン*/
 table{
     border-collapse: collapse;
+    width: 100%;
 }
 
 table td{
     border: solid 1px black;
-    width: 150px;
+    width: 200px;
     text-align: center;
+}
+
+/*製作者情報*/
+div.authorInfo{
+    display: inline-block;
+    width: 100%;
 }
