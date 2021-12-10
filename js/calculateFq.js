@@ -7,15 +7,16 @@ function getValues() {
     let circuit = document.getElementById("circuit-select").value;
     return circuit == "A" ? 29.2 : 31.1;
   };
-  let l = getL() * Math.pow(10, -3);
-  //抵抗r1の値を取得
-  let r1 = document.getElementById("r1Value").value;
-  //抵抗rlの値を取得
-  let rl = document.getElementById("rlValue").value;
-  //コンデンサ容量を取得
-  let c = document.getElementById("cValue").value * Math.pow(10, -9);
-  //可変抵抗の値を取得
-  const r2 = document.getElementById("r2Value").value;
+  // //突然Str型としてrlが認識される事があったため、parseFloat()してる。
+  const l = getL() * Math.pow(10, -3);
+  // //抵抗r1の値を取得
+  const r1 = parseFloat(document.getElementById("r1Value").value);
+  // //抵抗rlの値を取得
+  const rl = parseFloat(document.getElementById("rlValue").value);
+  // //コンデンサ容量を取得
+  const c = parseFloat(document.getElementById("cValue").value) * Math.pow(10, -9);
+  // //可変抵抗の値を取得
+  const r2 = parseFloat(document.getElementById("r2Value").value);
   //リストで返す
   return [l, r1, rl, r2, c];
 }
