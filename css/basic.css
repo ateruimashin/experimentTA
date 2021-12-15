@@ -14,13 +14,6 @@ h2{
     background: linear-gradient(transparent 70%, #a7d6ff 70%);
 }
 
-/*labelデザイン*/
-label{
-    display: inline-block;
-    width: 50%;
-    text-align: left;
-}
-
 /*inputにスピンボタンを非表示にする*/
 /*Chrome,Safari*/
 input[type="number"]::-webkit-outer-spin-button, 
@@ -43,10 +36,21 @@ div.button{
     display: flex;
     align-items: center;
 }
+
 /*入力部分のデザイン*/
 div.value{
-    width: 95%;
+    display: inline-block;
+    align-items: center;
+    width: 100%;
 }
+
+label{
+    display: inline-block;
+    width: 50%;
+    text-align: left;
+}
+
+
 /*式表示部分のデザイン*/
 div.formula{
     display: flex;
@@ -64,6 +68,10 @@ table td{
     border: solid 1px black;
     width: 200px;
     text-align: center;
+}
+/*出力結果部分のセルのデザイン*/
+table td:nth-child(2){
+    border: 2px solid black;
 }
 
 /*製作者情報*/
